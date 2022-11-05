@@ -14,12 +14,12 @@ class CreateCriptomoneda extends Migration
     public function up()
     {
         Schema::create('criptomoneda', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('logotipo',105);
             $table->string('nombre',75);
             $table->float('precio');
             $table->string('descripcion', 200)->nullable();
-            $table->unsignedInteger('lenguaje_id');
+            $table->unsignedBigInteger('lenguaje_id');
             $table->foreign('lenguaje_id')->references('id')->on('lenguaje_programacion');
             $table->date('fecha_creacion');
         });

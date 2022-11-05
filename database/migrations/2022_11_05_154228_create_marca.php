@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLenguajeProgramacion extends Migration
+class CreateMarca extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateLenguajeProgramacion extends Migration
      */
     public function up()
     {
-        Schema::create('lenguaje_programacion', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('descripcion',45)->nullable();
+        Schema::create('marca', function (Blueprint $table) {
+            $table->bigIncrements('id_marca');
+            $table->string('descripcion', 45);
         });
     }
 
@@ -26,6 +26,6 @@ class CreateLenguajeProgramacion extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lenguaje_programacion');
+        Schema::dropIfExists('marca');
     }
 }
